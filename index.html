@@ -29,6 +29,7 @@
             border-radius: .4em;
             overflow: hidden;
             border-collapse: collapse;
+            display: none;
         }
         th, td {
             border-bottom: 1px solid #668AAD;;
@@ -59,7 +60,10 @@
             text-align: center;
         }
         
-        tr:hover {background-color:#3D5873;}
+        tr:hover {
+            background-color:#3D5873;
+            transition-duration: 0.2s;
+        }
         
         fieldset {
             max-width: 475px;
@@ -87,12 +91,16 @@
         .inputval:hover, .inputval:focus {
             background-color: #F2F2F2;
             outline: none;
+            transition-duration: 0.3s;
         }
         .submit, .reset {
             border: none;
             color: white;
-            border-radius: 4px;
+            border-radius: 8px;
             outline: none;
+            transition-duration: 0.2s;
+            width: 90px;
+            text-transform: uppercase;
         }
         .submit {
             background-color: #0D6E00;
@@ -107,6 +115,7 @@
         .reset:hover {
             background-color: #A60000;
             box-shadow: 0 2px 5px #666;
+            
         }
 
     </style>
@@ -125,6 +134,7 @@
         if (isNaN(agentid) || (agentid == "")) {
             document.getElementById("status").innerHTML = "Please enter a numeric Agent ID.";
             document.getElementById("status").style.color = "red";
+            document.getElementById("report-table").style.display = "none";
             skipCheck = true;
         }
 
@@ -143,6 +153,7 @@
                     document.getElementById("cust-emo-range").innerHTML = element.Cust_Emotional_range;
                     document.getElementById("cust-fear").innerHTML = element.Cust_Fear;
                     document.getElementById("cust-joy").innerHTML = element.Cust_Joy;
+                    document.getElementById("report-table").style.display = "block";
                 }
             });
         }
@@ -161,6 +172,7 @@
             document.getElementById("cust-emo-range").innerHTML = "";
             document.getElementById("cust-fear").innerHTML = "";
             document.getElementById("cust-joy").innerHTML = "";
+            document.getElementById("report-table").style.display = "none";
         }
     }    
 
