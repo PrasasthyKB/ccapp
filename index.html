@@ -23,6 +23,7 @@
         }
         
         table {
+            max-width: 500px;
             background: #34495E;
             color: #fff;
             border-radius: .4em;
@@ -48,7 +49,7 @@
 
         th#ag-report {
             text-align: center;
-/*            font-weight: bold;*/
+            font-weight: bold;
             text-transform: uppercase;
             background-color:#547699;
         }
@@ -60,10 +61,19 @@
         
         tr:hover {background-color:#3D5873;}
         
-        form {
-            width: 50%;
-            border-radius: 5px;
+        fieldset {
+            max-width: 475px;
             background-color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        legend {
+            background-color: #FFD6D6;
+            font-size: small;
+        }
+        form {
+            width: 100%;
+            border-radius: 5px;
         }
         input {
             padding: 3px 8px;
@@ -71,13 +81,18 @@
             font-size: large;
         }
         .inputval {
-            border: 1px solid #5C7D9E;
-            border-radius: 4px;
+            border: none;
+            border-bottom: 1px solid #2ECBFF;
+        }
+        .inputval:hover, .inputval:focus {
+            background-color: #F2F2F2;
+            outline: none;
         }
         .submit, .reset {
             border: none;
             color: white;
             border-radius: 4px;
+            outline: none;
         }
         .submit {
             background-color: #0D6E00;
@@ -93,6 +108,7 @@
             background-color: #A60000;
             box-shadow: 0 2px 5px #666;
         }
+
     </style>
     
 </head>
@@ -108,6 +124,7 @@
 
         if (isNaN(agentid) || (agentid == "")) {
             document.getElementById("status").innerHTML = "Please enter a numeric Agent ID.";
+            document.getElementById("status").style.color = "red";
             skipCheck = true;
         }
 
@@ -116,6 +133,7 @@
                 if (element.Agent_ID == agentid) {
                     found = true;
                     document.getElementById("status").innerHTML = "Found an agent with ID " + agentid + ":";
+                    document.getElementById("status").style.color = "green";
                     document.getElementById("ag-name").innerHTML = element.Agent_name;
                     document.getElementById("ag-id").innerHTML = element.Agent_ID;
                     document.getElementById("cust-conf").innerHTML = element.Cust_confidence;
@@ -132,6 +150,7 @@
         if (!found) {
             if(!skipCheck) {
                 document.getElementById("status").innerHTML = "Could not find an agent with ID " + agentid + ".";
+                document.getElementById("status").style.color = "red";
             }
             document.getElementById("ag-name").innerHTML = "";
             document.getElementById("ag-id").innerHTML = "";
@@ -170,16 +189,19 @@
 <h2>Employee Evaluation Dashboard</h2>
 <br>
 
-<form>
-    <input type="text" class="inputval" id="agent-id" placeholder="Enter an Agent ID">
-    <input type="button" class="submit" onclick="getAgentDetails()" value="Submit">
-    <input type="reset" class="reset" value="Reset">
-</form>
+<fieldset>
+    <legend>Search Agent Reports</legend>
+    <form>
+        <input type="text" class="inputval" id="agent-id" placeholder="Enter an Agent ID">
+        <input type="button" class="submit" onclick="getAgentDetails()" value="Submit">
+        <input type="reset" class="reset" value="Reset">
+    </form>
+    <p id="status">&nbsp;</p>
+</fieldset>
 
-<p id="status">&nbsp;</p>
 <br>
 
-<table id="report-table" style="width:50%">
+<table id="report-table">
   <tr>
     <th>Agent Name</th>
     <td id="ag-name">&nbsp;</td> 
