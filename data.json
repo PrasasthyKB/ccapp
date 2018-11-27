@@ -1,0 +1,35 @@
+[
+  {
+   "Agent_name": "Anna",
+   "Agent_ID": 2525,
+   "Cust_confidence": 57.11,
+   "Cust_Agreeableness": 64.59,
+   "Cust_Anger": 7.82,
+   "Cust_Disgust": 5.66,
+   "Cust_Emotional_range": 47,
+   "Cust_Fear": 6.71,
+   "Cust_Joy": 22.77
+  },
+  {
+   "Agent_name": "John",
+   "Agent_ID": 3434,
+   "Cust_confidence": 7.11,
+   "Cust_Agreeableness": 4.59,
+   "Cust_Anger": 17.82,
+   "Cust_Disgust": 45.66,
+   "Cust_Emotional_range": 37,
+   "Cust_Fear": 16.71,
+   "Cust_Joy": 2.77
+  },
+  {
+   "Agent_name": "Jim",
+   "Agent_ID": 4545,
+   "Cust_confidence": 67.11,
+   "Cust_Agreeableness": 14.59,
+   "Cust_Anger": 17.82,
+   "Cust_Disgust": 6.66,
+   "Cust_Emotional_range": 27,
+   "Cust_Fear": 16.71,
+   "Cust_Joy": 52.77
+  }
+]
