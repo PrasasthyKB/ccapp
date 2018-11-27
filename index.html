@@ -50,7 +50,7 @@
             text-align: center;
 /*            font-weight: bold;*/
             text-transform: uppercase;
-            background-color:#628BB5;
+            background-color:#547699;
         }
 
         td {
@@ -60,7 +60,11 @@
         
         tr:hover {background-color:#3D5873;}
         
-        .submit, .cancel {
+        .inputval {
+            border: 1px solid #5C7D9E;
+            border-radius: 4px;
+        }
+        .submit, .reset {
             border: none;
             color: white;
             border-radius: 4px;
@@ -72,10 +76,10 @@
             background-color: #108700;
             box-shadow: 0 2px 5px #666;
         }
-        .cancel {
+        .reset {
             background-color: #6E0000;
         }
-        .cancel:hover {
+        .reset:hover {
             background-color: #A60000;
             box-shadow: 0 2px 5px #666;
         }
@@ -157,9 +161,9 @@
 <br>
 
 <form>
-    Agent ID: <input type="text" id="agent-id">
+    Agent ID: <input type="text" class="inputval" id="agent-id">
     <input type="button" class="submit" onclick="getAgentDetails()" value="Submit">
-    <input type="reset" class="cancel" value="Reset">
+    <input type="reset" class="reset" value="Reset">
 </form>
 
 <br>
