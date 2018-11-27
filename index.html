@@ -4,14 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Call Centre App</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <style>
-        h2 {
-           text-align: center;
+        body {
+            padding: 0 2em;
+            font-family: Montserrat, sans-serif;
+            color: #444;
+            background: #eee;
         }
         
-        table, th, td {
-            border: 1px solid black;
+        h2 {
+            text-align: center;
+            font-weight: normal;
+            letter-spacing: -1px;
+            color: #34495E;
+        }
+        
+        table {
+            background: #34495E;
+            color: #fff;
+            border-radius: .4em;
+            overflow: hidden;
+            border-collapse: collapse;
+        }
+        th, td {
+            border-bottom: 1px solid #668AAD;;
             border-collapse: collapse;
         }
 
@@ -23,21 +42,42 @@
 
         th {
             text-align: left;
-            color: #0033FF;
-            background-color: #DEDEDE;
+            color: #dd5;
             font-weight: normal;
         }
 
         th#ag-report {
-            color: black;
             text-align: center;
-            font-weight: bold;
-        /*    text-transform: uppercase;*/
+/*            font-weight: bold;*/
+            text-transform: uppercase;
+            background-color:#628BB5;
         }
 
         td {
             width: 30%;
             text-align: center;
+        }
+        
+        tr:hover {background-color:#3D5873;}
+        
+        .submit, .cancel {
+            border: none;
+            color: white;
+            border-radius: 4px;
+        }
+        .submit {
+            background-color: #0D6E00;
+        }
+        .submit:hover {
+            background-color: #108700;
+            box-shadow: 0 2px 5px #666;
+        }
+        .cancel {
+            background-color: #6E0000;
+        }
+        .cancel:hover {
+            background-color: #A60000;
+            box-shadow: 0 2px 5px #666;
         }
     </style>
     
@@ -118,8 +158,8 @@
 
 <form>
     Agent ID: <input type="text" id="agent-id">
-    <input type="button" onclick="getAgentDetails()" value="Submit">
-    <input type="reset" value="Cancel">
+    <input type="button" class="submit" onclick="getAgentDetails()" value="Submit">
+    <input type="reset" class="cancel" value="Reset">
 </form>
 
 <br>
