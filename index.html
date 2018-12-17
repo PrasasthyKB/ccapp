@@ -203,9 +203,9 @@
 
 <fieldset>
     <legend>Search Agent Reports</legend>
-    <form>
-        <input type="text" class="inputval" id="agent-id" placeholder="Enter an Agent ID">
-        <input type="button" class="submit" onclick="getAgentDetails()" value="Submit">
+    <form action = "/cgi-bin/hello.py" method ="post">
+        <input type="text" class="inputval" id="agent-id" name="agent_id" placeholder="Enter an Agent ID">
+        <input class="submit" type="submit" value="Submit">
         <input type="reset" class="reset" value="Reset">
     </form>
     <p id="status">&nbsp;</p>
